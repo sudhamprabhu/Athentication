@@ -13,6 +13,11 @@ using System.Threading.Tasks;
 using System.Security.Claims;
 using ImsApi.Entities.Auth;
 using AuthBLL;
+using Autofac;
+using Autofac.Integration.WebApi;
+using System.Reflection;
+
+
 [assembly: OwinStartup(typeof(ImsApi.Controller.Startup))]
 
 namespace ImsApi.Controller
@@ -46,11 +51,19 @@ namespace ImsApi.Controller
         public void Configuration(IAppBuilder app)
         {
             HttpConfiguration config = new HttpConfiguration();
-            
-            ConfigureOAuth(app, _userManager); // Startup.Auth
-                                                                     // ConfigureAuth(app); // Startup.Auth Existing
+
+            // Autofac integration
+            var builder = new ContainerBuilder();            
+            builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
+            var container = builder.Build();
+            config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
+            builder.RegisterWebApiFilterProvider(config);
+
+
+            ConfigureOAuth(app, _userManager); // Startup.Auth                                                                     // ConfigureAuth(app); // Startup.Auth Existing
             WebApiConfig.Register(config);
             app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
+            app.UseAutofacMiddleware(container);
             app.UseWebApi(config);
         }
 
