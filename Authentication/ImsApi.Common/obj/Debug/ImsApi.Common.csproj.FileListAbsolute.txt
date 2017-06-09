@@ -1,0 +1,4 @@
+D:\POC\Authentication\ImsApi.Common\bin\Debug\ImsApi.Common.dll
+D:\POC\Authentication\ImsApi.Common\bin\Debug\ImsApi.Common.pdb
+D:\POC\Authentication\ImsApi.Common\obj\Debug\ImsApi.Common.dll
+D:\POC\Authentication\ImsApi.Common\obj\Debug\ImsApi.Common.pdb
