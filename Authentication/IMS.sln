@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authentication", "Authentication\Authentication.csproj", "{92301428-8A1F-4373-96F8-608FAC799EC0}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImsUI", "ImsUI\ImsUI.csproj", "{F8592548-32D9-405C-8CF7-4B87FD34064E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{AD0B55DD-3D17-4661-A92E-18D251D10DAB}"
@@ -31,10 +29,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{92301428-8A1F-4373-96F8-608FAC799EC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{92301428-8A1F-4373-96F8-608FAC799EC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{92301428-8A1F-4373-96F8-608FAC799EC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{92301428-8A1F-4373-96F8-608FAC799EC0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F8592548-32D9-405C-8CF7-4B87FD34064E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F8592548-32D9-405C-8CF7-4B87FD34064E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8592548-32D9-405C-8CF7-4B87FD34064E}.Release|Any CPU.ActiveCfg = Release|Any CPU
