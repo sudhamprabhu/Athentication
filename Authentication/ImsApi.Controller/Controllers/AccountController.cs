@@ -28,7 +28,7 @@ namespace ImsApi.Controller.Controllers
 
         public AccountController()
         {
-            _repo = new AuthRepository(UserManager);
+            _repo = new AuthRepository();
         }
       
         public AuthUserManager UserManager

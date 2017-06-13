@@ -5,8 +5,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin;
 using AuthBLL.Entities;
+using Microsoft.Owin.Security.OAuth;
 
- 
+
 
 namespace AuthBLL
 {
@@ -15,13 +16,14 @@ namespace AuthBLL
         private AuthDbContext context;       
         private AuthUserManager _authUserManager;
        
-        public AuthRepository(AuthUserManager AuthUserManager)
+
+        public AuthRepository()
         {
-             
-             context = new AuthDbContext();
-            _authUserManager = AuthUserManager;
 
-
+            var dbContext = new AuthDbContext();
+            var userStore = new UserStore<User,Role,long,Login,UserRole,Claim>(dbContext);
+            var _authUserManager = new UserManager<User,long>(userStore);
+            
         }
 
         public async Task<IdentityResult> RegisterUser(string UserName,string Password, string Email)
