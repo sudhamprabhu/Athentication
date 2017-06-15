@@ -97,6 +97,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\Common\apiCaller.js" />
+    <Content Include="app\home.html" />
+    <Content Include="app\home\home.controller.js" />
+    <Content Include="app\home\home.html" />
+    <Content Include="app\login\login.service.js" />
+    <Content Include="app\signUp\registration.service.js" />
     <Content Include="content\css\Ims.css" />
     <Content Include="content\scripts\common\angular\angular.min.js" />
     <Content Include="packages.config" />
@@ -113,8 +119,6 @@
   <ItemGroup>
     <Content Include="app\authentication\auth.service.js" />
     <Content Include="app\authentication\authInterceptor.service.js" />
-    <Content Include="app\home\home.html" />
-    <Content Include="app\home\home.controller.js" />
     <Content Include="app\index.controller.js" />
     <Content Include="app\login\login.html" />
     <Content Include="app\login\login.controller.js" />

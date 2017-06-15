@@ -13,16 +13,16 @@ namespace AuthBLL
 {
   public  class AuthRepository : IDisposable
     {
-        private AuthDbContext context;       
-        private AuthUserManager _authUserManager;
+        private readonly AuthDbContext dbContext;       
+        private readonly UserManager<User,long> _authUserManager;
        
 
         public AuthRepository()
         {
 
-            var dbContext = new AuthDbContext();
+            dbContext = new AuthDbContext();
             var userStore = new UserStore<User,Role,long,Login,UserRole,Claim>(dbContext);
-            var _authUserManager = new UserManager<User,long>(userStore);
+            _authUserManager = new UserManager<User,long>(userStore);
             
         }
 
@@ -49,7 +49,7 @@ namespace AuthBLL
 
         public void Dispose()
         {
-            context.Dispose();
+            dbContext.Dispose();
             _authUserManager.Dispose();
 
         }

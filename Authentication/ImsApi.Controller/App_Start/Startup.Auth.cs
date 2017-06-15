@@ -21,7 +21,7 @@ namespace ImsApi.Controller
             OAuthAuthorizationServerOptions OAuthServerOptions = new OAuthAuthorizationServerOptions()
             {
                 AllowInsecureHttp = true,
-                TokenEndpointPath = new PathString("/oauth/token"),
+                TokenEndpointPath = new PathString("/token"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(1),
                 Provider = new SimpleAuthorizationServerProvider()
             };
@@ -89,7 +89,7 @@ namespace ImsApi.Controller
 
 //    // Configure the application for OAuth based flow
 //    PublicClientId = "self";
-//    OAuthOptions = new OAuthAuthorizationServerOptions
+//    OAuthOptions = new OAuthAuthorizationServerOptions55561
 //    {
 //        TokenEndpointPath = new PathString("/Token"),
 //        Provider = new ApplicationOAuthProvider(PublicClientId),

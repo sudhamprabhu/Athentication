@@ -1,8 +1,8 @@
 ﻿(function(){
     'use strict';
-    ImsAPP.service('authService', ['$http', '$q', 'localStorageService', function ($http, $q, localStorageService) {
+    ImsAPP.service('authService', ['$http', '$q', 'localStorageService', 'apiCall', function ($http, $q, localStorageService, apiCall) {
         debugger;
-        var serviceBase = 'http://localhost:56555/';
+        var serviceBase = 'http://localhost:57789/';
         var authserviceFactory = {
             //saveRegistration: _saveRegistration,
             //login: _login,
@@ -23,16 +23,23 @@
 
             _logOut();
 
-            return $http.post(serviceBase + 'api/account/register', registration).then(function (response) {
+            return $http.post(serviceBase + 'api/Registration/RegisterUser', registration).then(function (response) {
                 return response;
             });
         }
 
-      var _login = function(loginData) {
+        var _login = function (loginData) {
+            debugger;
+
+
             var data = "grant_type=password&username=" + loginData.userName + "&password=" + loginData.password;
+
+            var obj = apiCall.post('token', data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } });
+
+
             var deferred = $q.defer();
 
-            $http.post(serviceBase + 'token', data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).success(function (response) {
+                 $http.post(serviceBase + 'token', data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).success(function (response) {
 
                 localStorageService.set('authorizationData', { token: response.access_token, userName: loginData.userName });
 

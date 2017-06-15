@@ -7,12 +7,12 @@ ImsAPP.config(function ($routeProvider, $httpProvider) {
     templateUrl:"/app/home/home.html"
     });
     $routeProvider.when("/login", {
-        controller: "loginController",
+        controller: "indexController",
         templateUrl: "/app/login/login.html"
     });
 
     $routeProvider.when("/signup", {
-        controller: "signupController",
+        controller: "indexController",
         templateUrl: "/app/signUp/signup.html"
     });
 
@@ -26,7 +26,7 @@ ImsAPP.config(function ($routeProvider, $httpProvider) {
     $httpProvider.interceptors.push('authInterceptorService');
 });
 
- ImsAPP.run(['authService', function (authService) {
-    debugger;
-    authService.fillAuthData();
-  }]);
+ //ImsAPP.run(['authService', function (authService) {
+ //   debugger;
+ //   authService.fillAuthData();
+ // }]);
