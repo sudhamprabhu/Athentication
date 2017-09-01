@@ -1,7 +1,7 @@
 ﻿(function(){
     'use strict';
     ImsAPP.service('authService', ['$http', '$q', 'localStorageService', 'apiCall', function ($http, $q, localStorageService, apiCall) {
-        debugger;
+      
         var serviceBase = 'http://localhost:57789/';
         var authserviceFactory = {
             //saveRegistration: _saveRegistration,
@@ -29,9 +29,7 @@
         }
 
         var _login = function (loginData) {
-            debugger;
-
-
+           
             var data = "grant_type=password&username=" + loginData.userName + "&password=" + loginData.password;
 
             var obj = apiCall.post('token', data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } });
@@ -66,7 +64,7 @@
         }
 
       var _fillAuthData = function() {
-            debugger;
+           
             var authData = localStorageService.get('authorizationData');
             if (authData) {
                 _authentication.isAuth = true;

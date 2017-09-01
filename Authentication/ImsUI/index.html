@@ -21,8 +21,8 @@
                 <a class="navbar-brand" href="#/">Home</a>
             </div>
             <div class="collapse navbar-collapse" data-collapse="!navbarExpanded">
-                <ul class="nav navbar-nav navbar-right">
-                    <li data-ng-hide="!authentication.isAuth"><a href="#">Welcome {{authentication.userName}}</a></li>
+                <ul class="nav navbar-nav navbar-right">                  
+                    <li data-ng-hide="!authentication.isAuth"><a href="#">Welcome {{vm.authentication.userName}}</a></li>
                     <li data-ng-hide="!authentication.isAuth"><a href="#/orders">My Orders</a></li>
                     <li data-ng-hide="!authentication.isAuth"><a href="" ng-click="logOut()">Logout</a></li>
                     <li data-ng-hide="authentication.isAuth"> <a href="#/login">Login</a></li>
@@ -31,31 +31,32 @@
             </div>
         </div>
     </div>
-    <div class="jumbotron">
-        <div class="container">
-            <div class="page-header text-center">
-                <h1>AngularJS Authentication</h1>
-            </div>
-            <p>This single page application is built using AngularJS, it is using OAuth bearer token authentication, ASP.NET Web API 2, OWIN middleware, and ASP.NET Identity to generate tokens and register users.</p>
-        </div>
-    </div>
-    <div class="container">
-        <div data-ng-view="">
-        </div>
-    </div>
-    <hr />
-    <div id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="text-muted">Created by <a target="_blank" href="http://google.com">AAAA</a></p>
+        <div class="jumbotron">
+            <div class="container">
+                <div class="page-header text-center">
+                    <h1>AngularJS Authentication</h1>
                 </div>
-                <div class="col-md-6">
-                    <p class="text-muted"> <a target="_blank" href="http://google.com"></a></p>
-                </div>
+                <p>This single page application is built using AngularJS, it is using OAuth bearer token authentication, ASP.NET Web API 2, OWIN middleware, and ASP.NET Identity to generate tokens and register users.</p>
             </div>
         </div>
-    </div>
+        <div class="container">
+            <div data-ng-view="">
+            </div>
+        </div>
+        <hr />
+        <div id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="text-muted">Created by <a target="_blank" href="http://google.com">AAAA</a></p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="text-muted"> <a target="_blank" href="http://google.com"></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
     <!-- 3rd party libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
@@ -66,7 +67,7 @@
     <!-- Load services -->
     <script src="app/Common/apiCaller.js"></script>
     <script src="app/authentication/authInterceptor.service.js"></script>
-    <script src="app/authentication/auth.service.js"></script>
+    <!--<script src="app/authentication/auth.service.js"></script>-->
     <script src="app/orders/orders.service.js"></script>
     <script src="app/signUp/registration.service.js"></script>
     <script src="app/login/login.service.js"></script>

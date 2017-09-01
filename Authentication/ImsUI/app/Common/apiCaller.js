@@ -3,7 +3,6 @@
     ImsAPP.factory('apiCall', ['$http', '$q', '$location', function ($http, $q, $location) {
         var serviceBase = 'http://localhost:57789/';
         function processRequest(verb, uri, payload, config) {
-            debugger;
             var differed = $q.defer();
             var headerOptions = {
                 "Accept": "text/json",
@@ -20,7 +19,6 @@
                 data:(payload!==null)?payload:null,
                 headers: headerOptions || {} 
             }).then(function (response) {
-                debugger;
                 differed.resolve(response);
             },
            function (response) { 

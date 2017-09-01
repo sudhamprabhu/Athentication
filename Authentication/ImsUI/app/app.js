@@ -1,13 +1,13 @@
 ﻿var ImsAPP =  angular.module('ImsAPP', ['ngRoute', 'LocalStorageModule','angular-loading-bar']);
 
 ImsAPP.config(function ($routeProvider, $httpProvider) {
-    debugger;
     $routeProvider.when("/home",{
     controller:"homeController",
     templateUrl:"/app/home/home.html"
     });
+
     $routeProvider.when("/login", {
-        controller: "indexController",
+        controller: "loginController",
         templateUrl: "/app/login/login.html"
     });
 

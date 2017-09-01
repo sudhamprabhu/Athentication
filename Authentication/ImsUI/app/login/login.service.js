@@ -8,8 +8,8 @@
             removeTokenFromLocalStorage: _removeTokenFromLocalStorage
         };
         /* private functions */
-        function _getAuthtokens()
-        {
+        function _getAuthtokens(data)
+        {           
             var url = 'token',
             config = { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } };
             return apiCall.post(url, data, config);
