@@ -21,7 +21,8 @@
                 vm.authentication.userName = "";
                 $location.path('/home');
             },
-            login: function (loginData) {               
+            login: function (loginData) {
+                debugger;
                 var data = "grant_type=password&username=" + loginData.userName + "&password=" + loginData.password;
                 loginService.getAuthtokens(data).then(function (authtokenDetails) {
                     vm.authentication.isAuth = true;
