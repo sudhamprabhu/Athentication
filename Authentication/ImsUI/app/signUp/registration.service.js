@@ -7,10 +7,10 @@
             registerUser: _registerUser
         };
         /* private functions */
-        function _registerUser() {
+        function _registerUser(registration) {
             var url = 'api/Registration/RegisterUser',
             config = {};
-            return apiCall.post(url, data, config);
+            return apiCall.post(url, registration, config);
         }
 
     }]);

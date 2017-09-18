@@ -1,42 +1,51 @@
 ﻿(function () {
-    //'use strict';
-    //ImsAPP.controller('signupController', ['$scope', '$location', '$timeout', 'authService', function ($scope, $location, $timeout, authService) {
+    
+    'use strict';
+    function signupController($rootScope, $location, loginService, registrationService) {       
+        var vm = this;
+        $rootScope.userName = "";
+        $rootScope.isAuth = "";
+        $rootScope.isAuth = "";       
+        // $scope.message = "scope message";
 
-    //    $scope.savedSuccessfully = false;
-    //    $scope.message = "";
+        var _savedSuccessfully = true;
+        var _message = '';
+        var _registration = {
+            userName: "",
+            password: "",
+            confirmPassword: ""
+        };
 
-    //    $scope.registration = {
-    //        userName: "",
-    //        password: "",
-    //        confirmPassword: ""
-    //    };
+        /* members*/
+        angular.extend(this, {
+            savedSuccessfully: _savedSuccessfully,
+            registration: _registration,
+            message: _message
+        });
 
-    //    $scope.signUp = function () {
+        /* functions*/
+        angular.extend(this, {
+            signUp: function (registration) {
+                debugger;
+                registrationService.registerUser(registration).then(function (response) {
+                    debugger;
+                    console.log("registration : " + response);
+                        vm.savedSuccessfully = true;
+                        vm.message = "User has been registered successfully, you will be redicted to login page in 2 seconds.";
+                        $location.path('/login');
+                        //startTimer();
 
-    //        authService.saveRegistration($scope.registration).then(function (response) {
+                }).catch(function (response) {
+                    vm.savedSuccessfully = true;
+                    vm.message = "Oops!. registration failed!";
 
-    //            $scope.savedSuccessfully = true;
-    //            $scope.message = "User has been registered successfully, you will be redicted to login page in 2 seconds.";
-    //            startTimer();
+                });
+            }
+        });
 
-    //        },
-    //         function (response) {
-    //             var errors = [];
-    //             for (var key in response.data.modelState) {
-    //                 for (var i = 0; i < response.data.modelState[key].length; i++) {
-    //                     errors.push(response.data.modelState[key][i]);
-    //                 }
-    //             }
-    //             $scope.message = "Failed to register user due to:" + errors.join(' ');
-    //         });
-    //    };
+    };
 
-    //    var startTimer = function () {
-    //        var timer = $timeout(function () {
-    //            $timeout.cancel(timer);
-    //            $location.path('/login');
-    //        }, 2000);
-    //    }
+    signupController.$inject = ['$rootScope', '$location', 'loginService', 'registrationService'];
+    angular.module('ImsAPP').controller('signupController', signupController);
 
-    //}]);
 })();

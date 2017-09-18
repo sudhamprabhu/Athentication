@@ -2,17 +2,20 @@
 
 ImsAPP.config(function ($routeProvider, $httpProvider) {
     $routeProvider.when("/home",{
-    controller:"homeController",
+        controller: "homeController",
+        controllerAs: "vm",
     templateUrl:"/app/home/home.html"
     });
 
     $routeProvider.when("/login", {
         controller: "loginController",
+        controllerAs: "vm",
         templateUrl: "/app/login/login.html"
     });
 
     $routeProvider.when("/signup", {
-        controller: "indexController",
+        controller: "signupController",
+        controllerAs:"vm",
         templateUrl: "/app/signUp/signup.html"
     });
 
