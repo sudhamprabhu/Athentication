@@ -2,7 +2,7 @@
 
 namespace AuthBLL.Entities
 {
-    public class Claim : IdentityUserClaim<long>
+    public class ClaimDTO : IdentityUserClaim<long>
     {
     }
 }

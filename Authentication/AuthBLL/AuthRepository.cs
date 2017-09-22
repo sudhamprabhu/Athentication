@@ -14,25 +14,28 @@ namespace AuthBLL
   public  class AuthRepository : IDisposable
     {
         private readonly AuthDbContext dbContext;       
-        private readonly UserManager<User,long> _authUserManager;
+        private readonly UserManager<UserDTO,long> _authUserManager;
        
 
         public AuthRepository()
         {
 
             dbContext = new AuthDbContext();
-            var userStore = new UserStore<User,Role,long,Login,UserRole,Claim>(dbContext);
-            _authUserManager = new UserManager<User,long>(userStore);
+            var userStore = new UserStore<UserDTO,RoleDTO,long,LoginDTO,UserRoleDTO,ClaimDTO>(dbContext);
+            _authUserManager = new UserManager<UserDTO,long>(userStore);
             
         }
 
-        public async Task<IdentityResult> RegisterUser(string UserName,string Password, string Email)
+        public async Task<IdentityResult> RegisterUser(string UserName,string Password, string Email,int OrganizationId)
         {
             
-            User user = new User()
+            UserDTO user = new UserDTO()
             {
+               
                 UserName = UserName,
-                Email = Email
+                Email = Email,
+                OrganizationId= OrganizationId
+
             };
 
             var result = await _authUserManager.CreateAsync(user, Password);
@@ -40,16 +43,16 @@ namespace AuthBLL
             return result;
         }
 
-        public async Task<IdentityUser<long,Login, UserRole, Claim>> FindUser(string userName, string password)
+        public async Task<IdentityUser<long,LoginDTO, UserRoleDTO, ClaimDTO>> FindUser(string userName, string password)
         {
-            IdentityUser<long, Login, UserRole, Claim> user = await _authUserManager.FindAsync(userName, password);
+            IdentityUser<long, LoginDTO, UserRoleDTO, ClaimDTO> user = await _authUserManager.FindAsync(userName, password);
 
             return user;
         }
 
         public void Dispose()
         {
-            dbContext.Dispose();
+             dbContext.Dispose();
             _authUserManager.Dispose();
 
         }

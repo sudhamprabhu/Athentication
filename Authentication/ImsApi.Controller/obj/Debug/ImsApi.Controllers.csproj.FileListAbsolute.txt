@@ -99,6 +99,7 @@ D:\POC\Authentication\ImsApi.Controller\bin\ImsApi.Contracts.pdb
 D:\POC\Authentication\ImsApi.Controller\bin\ImsApi.Entities.pdb
 D:\POC\Authentication\ImsApi.Controller\bin\ImsApi.Services.dll
 D:\POC\Authentication\ImsApi.Controller\bin\ImsApi.Services.pdb
+D:\POC\Athentication\Authentication\ImsApi.Controller\obj\Debug\ImsApi.Controllers.csprojResolveAssemblyReference.cache
 D:\POC\Athentication\Authentication\ImsApi.Controller\bin\ApplicationInsights.config
 D:\POC\Athentication\Authentication\ImsApi.Controller\bin\roslyn\csc.exe
 D:\POC\Athentication\Authentication\ImsApi.Controller\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -119,6 +120,7 @@ D:\POC\Athentication\Authentication\ImsApi.Controller\bin\Antlr3.Runtime.dll
 D:\POC\Athentication\Authentication\ImsApi.Controller\bin\AuthBLL.dll
 D:\POC\Athentication\Authentication\ImsApi.Controller\bin\Autofac.dll
 D:\POC\Athentication\Authentication\ImsApi.Controller\bin\Autofac.Integration.WebApi.dll
+D:\POC\Athentication\Authentication\ImsApi.Controller\bin\AutoMapper.dll
 D:\POC\Athentication\Authentication\ImsApi.Controller\bin\EntityFramework.dll
 D:\POC\Athentication\Authentication\ImsApi.Controller\bin\EntityFramework.SqlServer.dll
 D:\POC\Athentication\Authentication\ImsApi.Controller\bin\ImsApi.Contracts.dll
@@ -167,6 +169,7 @@ D:\POC\Athentication\Authentication\ImsApi.Controller\bin\ImsApi.Entities.pdb
 D:\POC\Athentication\Authentication\ImsApi.Controller\bin\ImsApi.Services.pdb
 D:\POC\Athentication\Authentication\ImsApi.Controller\bin\Autofac.xml
 D:\POC\Athentication\Authentication\ImsApi.Controller\bin\Autofac.Integration.WebApi.xml
+D:\POC\Athentication\Authentication\ImsApi.Controller\bin\AutoMapper.xml
 D:\POC\Athentication\Authentication\ImsApi.Controller\bin\Microsoft.AI.DependencyCollector.xml
 D:\POC\Athentication\Authentication\ImsApi.Controller\bin\Microsoft.AI.ServerTelemetryChannel.xml
 D:\POC\Athentication\Authentication\ImsApi.Controller\bin\Microsoft.AI.Web.xml
@@ -201,6 +204,5 @@ D:\POC\Athentication\Authentication\ImsApi.Controller\bin\Microsoft.Owin.Securit
 D:\POC\Athentication\Authentication\ImsApi.Controller\bin\Microsoft.Owin.Security.Twitter.xml
 D:\POC\Athentication\Authentication\ImsApi.Controller\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\POC\Athentication\Authentication\ImsApi.Controller\bin\System.Web.Http.Owin.xml
-D:\POC\Athentication\Authentication\ImsApi.Controller\obj\Debug\ImsApi.Controllers.csprojResolveAssemblyReference.cache
 D:\POC\Athentication\Authentication\ImsApi.Controller\obj\Debug\ImsApi.Controller.dll
 D:\POC\Athentication\Authentication\ImsApi.Controller\obj\Debug\ImsApi.Controller.pdb

@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.1.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -94,68 +98,73 @@
     <Compile Include="AuthRepository.cs" />
     <Compile Include="Entities\AuthDbContext.cs" />
     <Compile Include="Entities\EmailService.cs" />
-    <Compile Include="Entities\Claim.cs" />
-    <Compile Include="Entities\Login.cs" />
-    <Compile Include="Entities\Role.cs" />
-    <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\ClaimDTO.cs" />
+    <Compile Include="Entities\IMSDbContext.cs" />
+    <Compile Include="Entities\LoginDTO.cs" />
+    <Compile Include="Entities\OrganizationDTO.cs" />
+    <Compile Include="Entities\RoleDTO.cs" />
+    <Compile Include="Entities\UserDTO.cs" />
     <Compile Include="Entities\AuthUserManager.cs" />
-    <Compile Include="Entities\UserRole.cs" />
+    <Compile Include="Entities\UserRoleDTO.cs" />
     <Compile Include="Entities\SmsService.cs" />
     <Compile Include="Entities\UserModel.cs" />
-    <Compile Include="Model\IdentityModel.Context.cs">
+    <Compile Include="IMSRepository.cs" />
+    <Compile Include="Model\IMS.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>IdentityModel.Context.tt</DependentUpon>
+      <DependentUpon>IMS.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\IdentityModel.cs">
+    <Compile Include="Model\IMS.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>IdentityModel.tt</DependentUpon>
+      <DependentUpon>IMS.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\IdentityModel.Designer.cs">
+    <Compile Include="Model\IMS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>IdentityModel.edmx</DependentUpon>
+      <DependentUpon>IMS.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Organization.cs">
+      <DependentUpon>IMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Role.cs">
-      <DependentUpon>IdentityModel.tt</DependentUpon>
+      <DependentUpon>IMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\User.cs">
-      <DependentUpon>IdentityModel.tt</DependentUpon>
+      <DependentUpon>IMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\UserClaim.cs">
-      <DependentUpon>IdentityModel.tt</DependentUpon>
+      <DependentUpon>IMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\UserLogin.cs">
-      <DependentUpon>IdentityModel.tt</DependentUpon>
+      <DependentUpon>IMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <EntityDeploy Include="Model\IdentityModel.edmx">
+    <EntityDeploy Include="Model\IMS.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>IdentityModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>IMS.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model\IdentityModel.edmx.diagram">
-      <DependentUpon>IdentityModel.edmx</DependentUpon>
+    <None Include="Model\IMS.edmx.diagram">
+      <DependentUpon>IMS.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="Model\IdentityModel.Context.tt">
+    <Content Include="Model\IMS.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>IdentityModel.edmx</DependentUpon>
-      <LastGenOutput>IdentityModel.Context.cs</LastGenOutput>
+      <DependentUpon>IMS.edmx</DependentUpon>
+      <LastGenOutput>IMS.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model\IdentityModel.tt">
+    <Content Include="Model\IMS.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>IdentityModel.edmx</DependentUpon>
-      <LastGenOutput>IdentityModel.cs</LastGenOutput>
+      <DependentUpon>IMS.edmx</DependentUpon>
+      <LastGenOutput>IMS.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

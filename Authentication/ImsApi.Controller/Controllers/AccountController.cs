@@ -52,7 +52,7 @@ namespace ImsApi.Controller.Controllers
                 return BadRequest(ModelState);
             }
 
-            IdentityResult result = await _repo.RegisterUser(userModel.UserName,userModel.Password,userModel.Email);
+            IdentityResult result = await _repo.RegisterUser(userModel.UserName,userModel.Password,userModel.Email,2);
 
             IHttpActionResult errorResult = GetErrorResult(result);
 

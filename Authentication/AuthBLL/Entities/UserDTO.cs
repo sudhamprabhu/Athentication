@@ -6,12 +6,13 @@ using Microsoft.AspNet.Identity.EntityFramework;
 namespace AuthBLL.Entities
 {
     
-    public class User : IdentityUser<long, Login, UserRole, Claim>
+    public class UserDTO : IdentityUser<long, LoginDTO, UserRoleDTO, ClaimDTO>
     {
         #region properties
 
         public string Hometown { get; set; }
 
+        public int? OrganizationId { get; set; }
         #endregion
 
         #region methods

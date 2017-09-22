@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using Microsoft.AspNet.Identity.EntityFramework;
-
+using System.Data.Entity.ModelConfiguration.Conventions;
 namespace AuthBLL.Entities
 {
    
@@ -13,7 +13,7 @@ namespace AuthBLL.Entities
     /// <remarks>
     /// This type depends on some other types out of this assembly.
     /// </remarks>
-    public class AuthDbContext : IdentityDbContext<User, Role, long, Login, UserRole, Claim>
+    public class AuthDbContext : IdentityDbContext<UserDTO, RoleDTO, long, LoginDTO, UserRoleDTO, ClaimDTO>
     {
         #region constructors and destructors
 
@@ -34,17 +34,21 @@ namespace AuthBLL.Entities
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+           
+            var conventions = new PluralizingTableNameConvention();
+            modelBuilder.Conventions.Remove(conventions);
             // Map Entities to their tables.
-            modelBuilder.Entity<User>().ToTable("User");
-            modelBuilder.Entity<Role>().ToTable("Role");
-            modelBuilder.Entity<Claim>().ToTable("UserClaim");
-            modelBuilder.Entity<Login>().ToTable("UserLogin");
-            modelBuilder.Entity<UserRole>().ToTable("UserRole");
+            modelBuilder.Entity<UserDTO>().ToTable("User");
+            modelBuilder.Entity<RoleDTO>().ToTable("Role");
+            modelBuilder.Entity<ClaimDTO>().ToTable("UserClaim");
+            modelBuilder.Entity<LoginDTO>().ToTable("UserLogin");
+            modelBuilder.Entity<UserRoleDTO>().ToTable("UserRole");
 
             // Set AutoIncrement-Properties
-            modelBuilder.Entity<User>().Property(r => r.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            modelBuilder.Entity<Claim>().Property(r => r.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            modelBuilder.Entity<Role>().Property(r => r.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            modelBuilder.Entity<UserDTO>().Property(r => r.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            modelBuilder.Entity<ClaimDTO>().Property(r => r.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            modelBuilder.Entity<RoleDTO>().Property(r => r.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             // Override some column mappings that do not match our default
            // modelBuilder.Entity<MyUser>().Property(r => r.UserName).HasColumnName("Login");

@@ -2,7 +2,7 @@
 
 namespace AuthBLL.Entities
 {   
-    public class UserRole : IdentityUserRole<long>
+    public class LoginDTO : IdentityUserLogin<long>
     {
     }
 }

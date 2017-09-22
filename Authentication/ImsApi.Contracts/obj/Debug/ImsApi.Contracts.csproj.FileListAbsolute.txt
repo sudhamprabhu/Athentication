@@ -26,6 +26,8 @@ D:\POC\Authentication\ImsApi.Contracts\bin\Debug\Microsoft.Owin.Security.Cookies
 D:\POC\Authentication\ImsApi.Contracts\obj\Debug\ImsApi.Contracts.csprojResolveAssemblyReference.cache
 D:\POC\Authentication\ImsApi.Contracts\obj\Debug\ImsApi.Contracts.dll
 D:\POC\Authentication\ImsApi.Contracts\obj\Debug\ImsApi.Contracts.pdb
+D:\POC\Athentication\Authentication\ImsApi.Contracts\obj\Debug\ImsApi.Contracts.csprojResolveAssemblyReference.cache
+D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\ImsApi.Contracts.dll.config
 D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\ImsApi.Contracts.dll
 D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\ImsApi.Contracts.pdb
 D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\AuthBLL.dll
@@ -35,10 +37,11 @@ D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\Microsoft.Owin.Se
 D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\Microsoft.Owin.Security.OAuth.dll
 D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\Newtonsoft.Json.dll
 D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\Owin.dll
-D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
 D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
 D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\EntityFramework.dll
 D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\AutoMapper.dll
 D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\Microsoft.Owin.Security.Cookies.dll
 D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\AuthBLL.pdb
 D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\ImsApi.Entities.pdb
@@ -46,11 +49,11 @@ D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\Microsoft.Owin.xm
 D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\Microsoft.Owin.Security.xml
 D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\Microsoft.Owin.Security.OAuth.xml
 D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\Newtonsoft.Json.xml
-D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\EntityFramework.xml
 D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\AutoMapper.xml
 D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\Microsoft.Owin.Security.Cookies.xml
-D:\POC\Athentication\Authentication\ImsApi.Contracts\obj\Debug\ImsApi.Contracts.csprojResolveAssemblyReference.cache
 D:\POC\Athentication\Authentication\ImsApi.Contracts\obj\Debug\ImsApi.Contracts.dll
 D:\POC\Athentication\Authentication\ImsApi.Contracts\obj\Debug\ImsApi.Contracts.pdb

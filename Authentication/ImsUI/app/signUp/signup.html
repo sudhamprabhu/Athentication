@@ -1,8 +1,29 @@
 ﻿<form class="form-login" role="form" ng-controller="signupController as vm">
     <h2 class="form-login-heading">Sign up</h2>
-    <input type="text" class="form-control" placeholder="Username" data-ng-model="vm.registration.userName" required autofocus>  
-    <input type="password" class="form-control" placeholder="Password" data-ng-model="vm.registration.password"  required>
-    <input type="password" class="form-control" placeholder="Confirm Password" data-ng-model="vm.registration.confirmPassword" required>    
+    <h1>user Information</h1>
+    <input type="text" class="form-control" placeholder="Username" data-ng-model="vm.registration.UserName" required autofocus>  
+    <input type="password" class="form-control" placeholder="Password" data-ng-model="vm.registration.Password"  required>
+    <input type="password" class="form-control" placeholder="Confirm Password" data-ng-model="vm.registration.ConfirmPassword" required>  
+    <input type="email" class="form-control" placeholder="Email" data-ng-model="vm.registration.Email" required>  
+    <hr />
+    <h1>Organization Information</h1>
+    <input type="text" class="form-control" placeholder="Organization Code" data-ng-model="vm.registration.OrganizationInputModel.Code" required >  
+    <input type="text" class="form-control" placeholder="Organization Name" data-ng-model="vm.registration.OrganizationInputModel.Name" required >  
+    <input type="text" class="form-control" placeholder="Address" data-ng-model="vm.registration.OrganizationInputModel.Address" required >  
+    Select Organization Type:
+    <select data-ng-model="vm.registration.OrganizationInputModel.Type"> 
+        <option data-ng-repeat="organizationType in vm.organizationTypes"  value="{{organizationType.id}}">{{organizationType.name}}</option>
+    </select>
+    <input type="text" class="form-control" placeholder="PhoneNo" data-ng-model="vm.registration.OrganizationInputModel.PhoneNo" required >  
+    Select Country:
+    <select data-ng-model="vm.registration.OrganizationInputModel.Country">
+        <option data-ng-repeat="country in vm.countries"  value="{{country.id}}">{{country.name}}</option>
+    </select> 
+    Select State:  
+    <select data-ng-model="vm.registration.OrganizationInputModel.State">
+        <option data-ng-repeat="state in vm.states" value="{{state.id}}">{{state.name}}</option>
+    </select>   
+      
     <button class="btn btn-lg btn-info btn-block" type="submit" ng-click="vm.signUp(vm.registration)">Submit</button>   
     <div data-ng-hide="vm.message == ''" data-ng-class="(vm.savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
         {{vm.message}}

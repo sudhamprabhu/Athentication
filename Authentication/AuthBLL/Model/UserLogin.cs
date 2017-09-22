@@ -14,10 +14,8 @@ namespace AuthBLL.Model
     
     public partial class UserLogin
     {
-        public long UserId { get; set; }
+        public long Id { get; set; }
         public string LoginProvider { get; set; }
         public string ProviderKey { get; set; }
-    
-        public virtual User User { get; set; }
     }
 }

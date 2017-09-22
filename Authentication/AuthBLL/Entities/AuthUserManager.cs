@@ -5,11 +5,11 @@ using Microsoft.Owin;
 
 namespace AuthBLL.Entities
 {
-    public class AuthUserManager : UserManager<User, long>
+    public class AuthUserManager : UserManager<UserDTO, long>
     {
         #region constructors and destructors
 
-        public AuthUserManager(IUserStore<User, long> store) : base(store)
+        public AuthUserManager(IUserStore<UserDTO, long> store) : base(store)
         {
 
         }
@@ -20,10 +20,10 @@ namespace AuthBLL.Entities
 
         public static AuthUserManager Create(IdentityFactoryOptions<AuthUserManager> options, IOwinContext context)
         {
-            var manager = new AuthUserManager(new UserStore<User, Role, long,Login,UserRole,Claim>(context.Get<AuthDbContext>()));
+            var manager = new AuthUserManager(new UserStore<UserDTO, RoleDTO, long,LoginDTO,UserRoleDTO,ClaimDTO>(context.Get<AuthDbContext>()));
 
             // Configure validation logic for usernames
-            manager.UserValidator = new UserValidator<User, long>(manager)
+            manager.UserValidator = new UserValidator<UserDTO, long>(manager)
             {
                 AllowOnlyAlphanumericUserNames = false,
                 RequireUniqueEmail = true
@@ -43,13 +43,13 @@ namespace AuthBLL.Entities
             // You can write your own provider and plug in here.
             manager.RegisterTwoFactorProvider(
                 "PhoneCode",
-                new PhoneNumberTokenProvider<User, long>
+                new PhoneNumberTokenProvider<UserDTO, long>
                 {
                     MessageFormat = "Your security code is: {0}"
                 });
             manager.RegisterTwoFactorProvider(
                 "EmailCode",
-                new EmailTokenProvider<User, long>
+                new EmailTokenProvider<UserDTO, long>
                 {
                     Subject = "Security Code",
                     BodyFormat = "Your security code is: {0}"
@@ -59,7 +59,7 @@ namespace AuthBLL.Entities
             var dataProtectionProvider = options.DataProtectionProvider;
             if (dataProtectionProvider != null)
             {
-                manager.UserTokenProvider = new DataProtectorTokenProvider<User, long>(dataProtectionProvider.Create("ASP.NET Identity"));
+                manager.UserTokenProvider = new DataProtectorTokenProvider<UserDTO, long>(dataProtectionProvider.Create("ASP.NET Identity"));
             }
             return manager;
         }
