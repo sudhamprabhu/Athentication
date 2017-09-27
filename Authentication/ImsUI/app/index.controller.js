@@ -2,9 +2,10 @@
     'use strict';
     function indexController($rootScope, $location, loginService, registrationService) {
         var vm = this;
+        debugger;
         $rootScope.userName="";
-        $rootScope.isAuth = "";
-        $rootScope.isAuth = "";
+        $rootScope.isAuth = false;
+        
        
         var _savedSuccessfully = true;
         var _message = '';

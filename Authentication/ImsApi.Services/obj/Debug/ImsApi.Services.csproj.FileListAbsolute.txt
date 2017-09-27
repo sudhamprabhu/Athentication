@@ -35,7 +35,6 @@ D:\POC\Authentication\ImsApi.Services\bin\Debug\Newtonsoft.Json.xml
 D:\POC\Authentication\ImsApi.Services\obj\Debug\ImsApi.Services.csprojResolveAssemblyReference.cache
 D:\POC\Authentication\ImsApi.Services\obj\Debug\ImsApi.Services.dll
 D:\POC\Authentication\ImsApi.Services\obj\Debug\ImsApi.Services.pdb
-D:\POC\Athentication\Authentication\ImsApi.Services\obj\Debug\ImsApi.Services.csprojResolveAssemblyReference.cache
 D:\POC\Athentication\Authentication\ImsApi.Services\bin\Debug\ImsApi.Services.dll.config
 D:\POC\Athentication\Authentication\ImsApi.Services\bin\Debug\ImsApi.Services.dll
 D:\POC\Athentication\Authentication\ImsApi.Services\bin\Debug\ImsApi.Services.pdb
@@ -72,5 +71,6 @@ D:\POC\Athentication\Authentication\ImsApi.Services\bin\Debug\Microsoft.Owin.Sec
 D:\POC\Athentication\Authentication\ImsApi.Services\bin\Debug\Microsoft.Owin.Security.OAuth.xml
 D:\POC\Athentication\Authentication\ImsApi.Services\bin\Debug\Newtonsoft.Json.xml
 D:\POC\Athentication\Authentication\ImsApi.Services\bin\Debug\AutoMapper.xml
+D:\POC\Athentication\Authentication\ImsApi.Services\obj\Debug\ImsApi.Services.csprojResolveAssemblyReference.cache
 D:\POC\Athentication\Authentication\ImsApi.Services\obj\Debug\ImsApi.Services.dll
 D:\POC\Athentication\Authentication\ImsApi.Services\obj\Debug\ImsApi.Services.pdb

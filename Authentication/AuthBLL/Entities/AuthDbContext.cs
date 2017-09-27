@@ -44,15 +44,15 @@ namespace AuthBLL.Entities
             modelBuilder.Entity<ClaimDTO>().ToTable("UserClaim");
             modelBuilder.Entity<LoginDTO>().ToTable("UserLogin");
             modelBuilder.Entity<UserRoleDTO>().ToTable("UserRole");
-
+           
             // Set AutoIncrement-Properties
             modelBuilder.Entity<UserDTO>().Property(r => r.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             modelBuilder.Entity<ClaimDTO>().Property(r => r.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             modelBuilder.Entity<RoleDTO>().Property(r => r.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             // Override some column mappings that do not match our default
-           // modelBuilder.Entity<MyUser>().Property(r => r.UserName).HasColumnName("Login");
-           // modelBuilder.Entity<MyUser>().Property(r => r.PasswordHash).HasColumnName("Password");
+            modelBuilder.Entity<UserDTO>().Property(r => r.Id).HasColumnName("Id");
+           modelBuilder.Entity<UserDTO>().Property(r => r.OrganizationId).HasColumnName("OrganizationId");
         }
 
         #endregion

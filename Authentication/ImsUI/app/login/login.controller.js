@@ -25,13 +25,14 @@
                 debugger;
                 var data = "grant_type=password&username=" + loginData.userName + "&password=" + loginData.password;
                 loginService.getAuthtokens(data).then(function (authtokenDetails) {
-                    vm.authentication.isAuth = true;
+                    console.log(authtokenDetails);
                     $rootScope.isAuth = true;
                     vm.authentication.userName = loginData.userName;
                     $rootScope.userName = loginData.userName;
                     loginService.setTokenInLocalstorage(authtokenDetails.data);
                     $location.path('/signup');
                 }).catch(function (response) {
+                    debugger;
                     vm.message == 'login failed.';
                     vm.logOut();
                     

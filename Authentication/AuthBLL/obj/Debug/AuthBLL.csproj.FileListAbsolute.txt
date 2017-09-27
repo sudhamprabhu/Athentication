@@ -27,7 +27,6 @@ D:\POC\Authentication\AuthBLL\obj\Debug\AuthBLL.dll
 D:\POC\Authentication\AuthBLL\obj\Debug\AuthBLL.pdb
 D:\POC\Authentication\AuthBLL\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
 D:\POC\Authentication\AuthBLL\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
-D:\POC\Athentication\Authentication\AuthBLL\obj\Debug\AuthBLL.csprojResolveAssemblyReference.cache
 D:\POC\Athentication\Authentication\AuthBLL\bin\Debug\AuthBLL.dll.config
 D:\POC\Athentication\Authentication\AuthBLL\bin\Debug\AuthBLL.dll
 D:\POC\Athentication\Authentication\AuthBLL\bin\Debug\AuthBLL.pdb
@@ -58,3 +57,4 @@ D:\POC\Athentication\Authentication\AuthBLL\bin\Debug\Microsoft.Owin.Security.OA
 D:\POC\Athentication\Authentication\AuthBLL\bin\Debug\Newtonsoft.Json.xml
 D:\POC\Athentication\Authentication\AuthBLL\obj\Debug\AuthBLL.dll
 D:\POC\Athentication\Authentication\AuthBLL\obj\Debug\AuthBLL.pdb
+D:\POC\Athentication\Authentication\AuthBLL\obj\Debug\AuthBLL.csprojResolveAssemblyReference.cache

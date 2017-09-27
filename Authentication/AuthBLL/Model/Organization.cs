@@ -14,12 +14,6 @@ namespace AuthBLL.Model
     
     public partial class Organization
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Organization()
-        {
-            this.Users = new HashSet<User>();
-        }
-    
         public int OrganizationId { get; set; }
         public string Code { get; set; }
         public string Name { get; set; }
@@ -28,8 +22,5 @@ namespace AuthBLL.Model
         public string PhoneNo { get; set; }
         public int Country { get; set; }
         public int State { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<User> Users { get; set; }
     }
 }

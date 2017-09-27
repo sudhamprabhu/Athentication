@@ -6,7 +6,9 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace AuthBLL.Entities
 {
-    public class IMSDbContext : IMSDbEntities
+
+    // string ConnectionStringName
+    public class IMSDbContext : IMSEntities
     {
         public IMSDbContext():base("ImsConnection")
         {
@@ -16,22 +18,24 @@ namespace AuthBLL.Entities
             return new IMSDbContext();
         }
 
-        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        //{
-        //    base.OnModelCreating(modelBuilder);
-        //    var conventions = new PluralizingTableNameConvention();
-        //    var conventions2 = new PluralizingEntitySetNameConvention();
-        //    modelBuilder.Conventions.Remove(conventions2);
-        //    modelBuilder.Conventions.Remove(conventions);
-            
-        //    // Map Entities to their tables.
-        //    modelBuilder.Entity<Organization>().ToTable("Organization");
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<PluralizingEntitySetNameConvention>();
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.Entity<Organization>().ToTable("Organization");
+            modelBuilder.Entity<User>().ToTable("User");
+            modelBuilder.Entity<Role>().ToTable("Role");
+            modelBuilder.Entity<UserClaim>().ToTable("UserClaim");
+            modelBuilder.Entity<UserLogin>().ToTable("UserLogin");
+            modelBuilder.Entity<Role>().ToTable("UserRole");
 
-           
-        //    // Override some column mappings that do not match our default
-        //    // modelBuilder.Entity<MyUser>().Property(r => r.UserName).HasColumnName("Login");
-        //    // modelBuilder.Entity<MyUser>().Property(r => r.PasswordHash).HasColumnName("Password");
-        //}
+            //modelBuilder.Entity<User>()
+            //.HasMany(n => n.Organization)
+            //.WithRequired() // <- no param because not exposed end of relation,
+            //                // nc => nc.News would throw an exception
+            //                // because nc.News is in the base class
+            //.Map(a => a.MapKey("NewsId"));
+        }
 
     }
 }

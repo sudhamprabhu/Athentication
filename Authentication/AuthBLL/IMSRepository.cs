@@ -17,17 +17,15 @@ namespace AuthBLL
 
         }
 
-        public OrganizationDTO SaveOrganizationDetails(OrganizationDTO organizationDTO)
+        public bool SaveOrganizationDetails(OrganizationDTO organizationDTO)
         {
-
-
             var organization =  dbContext.Organizations.Create<Organization>();          
             //var organization = new Organization();
             organization =  Mapper.Map<OrganizationDTO, Organization>(organizationDTO);
             dbContext.Organizations.Add(organization);
             dbContext.SaveChanges();
             organizationDTO =  Mapper.Map<Organization, OrganizationDTO>(organization);
-            return  organizationDTO;
+            return  organizationDTO?.OrganizationId>0 ? true :false;
         }
 
         public void Dispose()

@@ -18,7 +18,7 @@ namespace AuthBLL.Model
         public User()
         {
             this.UserClaims = new HashSet<UserClaim>();
-            this.Roles = new HashSet<Role>();
+            this.UserLogins = new HashSet<UserLogin>();
         }
     
         public long Id { get; set; }
@@ -34,12 +34,12 @@ namespace AuthBLL.Model
         public bool LockoutEnabled { get; set; }
         public int AccessFailedCount { get; set; }
         public string UserName { get; set; }
-        public Nullable<int> OrganizationId { get; set; }
+        public int OrganizationId { get; set; }
     
-        public virtual Organization Organization { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserClaim> UserClaims { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Role> Roles { get; set; }
+        public virtual ICollection<UserLogin> UserLogins { get; set; }
+        public virtual Role Role { get; set; }
     }
 }
