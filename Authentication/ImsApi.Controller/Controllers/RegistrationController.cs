@@ -4,6 +4,7 @@ using ImsApi.Contracts.Auth;
 using System.Web;
 using System;
 using System.Web.Http;
+using System.Threading.Tasks;
 
 
 namespace ImsApi.Controller.Controllers
@@ -21,20 +22,12 @@ namespace ImsApi.Controller.Controllers
 
         [HttpPost]
         [Route("RegisterUser")]
-        public bool RegisterUser(RegistrationInputModel registrationInputModel)
+        public async Task<bool> RegisterUser(RegistrationInputModel registrationInputModel)
         {
             bool Success = false;
-           
-            var result = _IAuthService.RegisterUser(registrationInputModel);
 
-            //IHttpActionResult errorResult = GetErrorResult(result);
+            Success = await _IAuthService.RegisterUser(registrationInputModel);
 
-            //if (errorResult != null)
-            //{
-            //    return errorResult;
-            //}
-
-            //return Ok();
             return Success;
 
         }

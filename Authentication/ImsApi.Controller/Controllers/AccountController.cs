@@ -43,26 +43,26 @@ namespace ImsApi.Controller.Controllers
                 _userManager = value;
             }
         }
-        [Route("Register")]
-        
-        public async Task<IHttpActionResult> Register(UserModel userModel)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+        //[Route("Register")]
 
-            IdentityResult result = await _repo.RegisterUser(userModel.UserName,userModel.Password,userModel.Email,2);
+        //public async Task<IHttpActionResult> Register(UserModel userModel)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
 
-            IHttpActionResult errorResult = GetErrorResult(result);
+        //    IdentityResult result = await _repo.RegisterUser(userModel.UserName, userModel.Password, userModel.Email);
 
-            if (errorResult != null)
-            {
-                return errorResult;
-            }
+        //    IHttpActionResult errorResult = GetErrorResult(result);
 
-            return Ok();
-        }
+        //    if (errorResult != null)
+        //    {
+        //        return errorResult;
+        //    }
+
+        //    return Ok();
+        //}
 
         public AccountController(AuthUserManager userManager,
             ISecureDataFormat<AuthenticationTicket> accessTokenFormat)

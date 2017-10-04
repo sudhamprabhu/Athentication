@@ -1,19 +1,15 @@
 ﻿using ImsApi.Entities.Auth;
-using Owin;
-using System;
-using Microsoft.Owin;
-using Microsoft.Owin.Security.OAuth;
 using System.Threading.Tasks;
-using System.Security.Claims;
 using AuthBLL.Entities;
 using AuthBLL;
-using Microsoft.AspNet.Identity.EntityFramework;
+using IMSBLL;
+using IMSBLL.Entities;
 using ImsApi.Contracts.Auth;
-using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace ImsApi.Services
 {
-   public  class AuthService : ApiServiceBase, IAuthService
+    public  class AuthService : ApiServiceBase, IAuthService
     {
         AuthRepository authRepository;
         IMSRepository iMSRepository;
@@ -21,7 +17,6 @@ namespace ImsApi.Services
         {
             authRepository = new AuthRepository();
             iMSRepository = new IMSRepository();
-
         }
 
         public bool GetUser(UserInputModel userInputModel)
@@ -31,7 +26,7 @@ namespace ImsApi.Services
             return success;
         }
 
-        public bool RegisterUser(RegistrationInputModel registrationInputModel)
+        public async Task<bool> RegisterUser(RegistrationInputModel registrationInputModel)
         {
             bool success = false;
             UserDTO user = new UserDTO()
@@ -41,11 +36,14 @@ namespace ImsApi.Services
                 
             };
 
-            var userDTO =  authRepository.RegisterUser(user, registrationInputModel.Password).Result;
+            var userDTO = await authRepository.RegisterUser(user, registrationInputModel.Password);
             if(userDTO!=null)
             {
-               var isClaimSuccess =  authRepository.AddClaimToUser(userDTO.Id).Result;
-               var isRpleSuccess =   authRepository.AdRoleToUser(userDTO.Id).Result;
+               List<ClaimDTO> claims = new List<ClaimDTO>();
+               
+               claims.Add(new ClaimDTO() { ClaimType = "Permission", ClaimValue = "ALL" });
+               var isClaimSuccess = await  authRepository.AddClaimToUser(userDTO.Id, claims);
+               var isRpleSuccess =  await authRepository.AdRoleToUser(userDTO.Id,"Admin");
                
                 if(isClaimSuccess&& isRpleSuccess)
                 {
@@ -57,16 +55,22 @@ namespace ImsApi.Services
                     organizationDTO.Type = registrationInputModel.OrganizationInputModel.Type;
                     organizationDTO.PhoneNo = registrationInputModel.OrganizationInputModel.PhoneNo;
                     organizationDTO.Name = registrationInputModel.OrganizationInputModel.Name;
-
+                    organizationDTO = await SaveOrgDetails(organizationDTO);
+                    var result =  await UpdateUser(userDTO);
                 }
             }
             authRepository.Dispose();
             return success;
         }
 
-        private bool SaveOrgDetails(OrganizationDTO organizationDTO)
-        {           
-           return iMSRepository.SaveOrganizationDetails(organizationDTO);          
+        public async Task<UserDTO> UpdateUser(UserDTO user)
+        {
+            return await authRepository.UpdateUser(user);
+        }
+
+        private async Task<OrganizationDTO> SaveOrgDetails(OrganizationDTO organizationDTO)
+        {
+            return await iMSRepository.SaveOrganizationDetails(organizationDTO);
         }
 
     }

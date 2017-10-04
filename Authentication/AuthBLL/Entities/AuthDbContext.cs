@@ -39,6 +39,7 @@ namespace AuthBLL.Entities
             var conventions = new PluralizingTableNameConvention();
             modelBuilder.Conventions.Remove(conventions);
             // Map Entities to their tables.
+            modelBuilder.HasDefaultSchema("Auth");
             modelBuilder.Entity<UserDTO>().ToTable("User");
             modelBuilder.Entity<RoleDTO>().ToTable("Role");
             modelBuilder.Entity<ClaimDTO>().ToTable("UserClaim");
@@ -51,8 +52,8 @@ namespace AuthBLL.Entities
             modelBuilder.Entity<RoleDTO>().Property(r => r.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             // Override some column mappings that do not match our default
-            modelBuilder.Entity<UserDTO>().Property(r => r.Id).HasColumnName("Id");
-           modelBuilder.Entity<UserDTO>().Property(r => r.OrganizationId).HasColumnName("OrganizationId");
+           // modelBuilder.Entity<UserDTO>().Property(r => r.Id).HasColumnName("Id");
+          // modelBuilder.Entity<UserDTO>().Property(r => r.OrganizationId).HasColumnName("OrganizationId");
         }
 
         #endregion

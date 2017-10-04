@@ -1,0 +1,12 @@
+D:\POC\Athentication\Authentication\IMSBLL\bin\Debug\IMSBLL.dll.config
+D:\POC\Athentication\Authentication\IMSBLL\bin\Debug\IMSBLL.dll
+D:\POC\Athentication\Authentication\IMSBLL\bin\Debug\IMSBLL.pdb
+D:\POC\Athentication\Authentication\IMSBLL\bin\Debug\AutoMapper.dll
+D:\POC\Athentication\Authentication\IMSBLL\bin\Debug\EntityFramework.dll
+D:\POC\Athentication\Authentication\IMSBLL\bin\Debug\EntityFramework.SqlServer.dll
+D:\POC\Athentication\Authentication\IMSBLL\bin\Debug\AutoMapper.xml
+D:\POC\Athentication\Authentication\IMSBLL\bin\Debug\EntityFramework.xml
+D:\POC\Athentication\Authentication\IMSBLL\bin\Debug\EntityFramework.SqlServer.xml
+D:\POC\Athentication\Authentication\IMSBLL\obj\Debug\IMSBLL.csprojResolveAssemblyReference.cache
+D:\POC\Athentication\Authentication\IMSBLL\obj\Debug\IMSBLL.dll
+D:\POC\Athentication\Authentication\IMSBLL\obj\Debug\IMSBLL.pdb

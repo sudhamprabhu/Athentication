@@ -5,6 +5,8 @@ using ImsApi.Controller.App_Start;
 using AutoMapper;
 using AuthBLL.Entities;
 using AuthBLL.Model;
+using IMSBLL.Model;
+using IMSBLL.Entities;
 
 [assembly: OwinStartup(typeof(ImsApi.Controller.Startup))]
 
@@ -36,6 +38,8 @@ namespace ImsApi.Controller
             {
                 cfg.CreateMap<OrganizationDTO, Organization>();
                 cfg.CreateMap<Organization, OrganizationDTO>();
+                cfg.CreateMap<UserDTO, User>();
+                cfg.CreateMap<User, UserDTO>();
             });
         }
 

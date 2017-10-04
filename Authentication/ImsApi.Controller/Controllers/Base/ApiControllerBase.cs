@@ -9,9 +9,9 @@ using System.Web.Http;
 
 namespace ImsApi.Controller.Controllers
 {
-    public class ApiControllerBase : ApiController
+    public abstract class ApiControllerBase : ApiController
     {
-        public ApiControllerBase()
+        public  ApiControllerBase()
         {
              
         }

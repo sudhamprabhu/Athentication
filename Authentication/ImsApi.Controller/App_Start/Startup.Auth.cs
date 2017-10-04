@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Security.Claims;
 using AuthBLL.Entities;
 using AuthBLL;
+using System.Security.Claims;
 
 namespace ImsApi.Controller
 {
@@ -45,9 +46,11 @@ namespace ImsApi.Controller
 
                 context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
 
+                var user = new UserDTO();
+
                 using (AuthRepository _authRepository = new AuthRepository())
                 {
-                    var user = await _authRepository.FindUser(context.UserName, context.Password);
+                     user = await _authRepository.FindUser(context.UserName, context.Password);
 
                     if (user == null)
                     {
@@ -57,8 +60,13 @@ namespace ImsApi.Controller
                 }
 
                 var identity = new ClaimsIdentity(context.Options.AuthenticationType);
-                identity.AddClaim(new System.Security.Claims.Claim("sub", context.UserName));
-                identity.AddClaim(new System.Security.Claims.Claim("role", "user"));
+                if (user.Claims.Count > 0)
+                {
+                    foreach (var claimDTO in user.Claims)
+                    {
+                        identity.AddClaim(new Claim(claimDTO.ClaimType,claimDTO.ClaimValue));                        
+                    }
+                }
 
                 context.Validated(identity);
 

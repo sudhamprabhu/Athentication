@@ -99,73 +99,66 @@
     <Compile Include="Entities\AuthDbContext.cs" />
     <Compile Include="Entities\EmailService.cs" />
     <Compile Include="Entities\ClaimDTO.cs" />
-    <Compile Include="Entities\IMSDbContext.cs" />
     <Compile Include="Entities\LoginDTO.cs" />
-    <Compile Include="Entities\OrganizationDTO.cs" />
     <Compile Include="Entities\RoleDTO.cs" />
     <Compile Include="Entities\UserDTO.cs" />
     <Compile Include="Entities\AuthUserManager.cs" />
     <Compile Include="Entities\UserRoleDTO.cs" />
     <Compile Include="Entities\SmsService.cs" />
     <Compile Include="Entities\UserModel.cs" />
-    <Compile Include="IMSRepository.cs" />
-    <Compile Include="Model\IMSModel.Context.cs">
+    <Compile Include="Model\AuthDatabaseContext.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>IMSModel.Context.tt</DependentUpon>
+      <DependentUpon>AuthDatabaseContext.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\IMSModel.cs">
+    <Compile Include="Model\AuthDatabaseContext.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>IMSModel.tt</DependentUpon>
+      <DependentUpon>AuthDatabaseContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\IMSModel.Designer.cs">
+    <Compile Include="Model\AuthDatabaseContext.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>IMSModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Organization.cs">
-      <DependentUpon>IMSModel.tt</DependentUpon>
+      <DependentUpon>AuthDatabaseContext.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model\Role.cs">
-      <DependentUpon>IMSModel.tt</DependentUpon>
+      <DependentUpon>AuthDatabaseContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\User.cs">
-      <DependentUpon>IMSModel.tt</DependentUpon>
+      <DependentUpon>AuthDatabaseContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\UserClaim.cs">
-      <DependentUpon>IMSModel.tt</DependentUpon>
+      <DependentUpon>AuthDatabaseContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\UserLogin.cs">
-      <DependentUpon>IMSModel.tt</DependentUpon>
+      <DependentUpon>AuthDatabaseContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <EntityDeploy Include="Model\IMSModel.edmx">
+    <EntityDeploy Include="Model\AuthDatabaseContext.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>IMSModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>AuthDatabaseContext.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model\IMSModel.edmx.diagram">
-      <DependentUpon>IMSModel.edmx</DependentUpon>
+    <None Include="Model\AuthDatabaseContext.edmx.diagram">
+      <DependentUpon>AuthDatabaseContext.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="Model\IMSModel.Context.tt">
+    <Content Include="Model\AuthDatabaseContext.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>IMSModel.edmx</DependentUpon>
-      <LastGenOutput>IMSModel.Context.cs</LastGenOutput>
+      <DependentUpon>AuthDatabaseContext.edmx</DependentUpon>
+      <LastGenOutput>AuthDatabaseContext.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model\IMSModel.tt">
+    <Content Include="Model\AuthDatabaseContext.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>IMSModel.edmx</DependentUpon>
-      <LastGenOutput>IMSModel.cs</LastGenOutput>
+      <DependentUpon>AuthDatabaseContext.edmx</DependentUpon>
+      <LastGenOutput>AuthDatabaseContext.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -7,7 +7,7 @@ namespace ImsApi.Contracts.Auth
 {
    public interface IAuthService
     {
-        bool RegisterUser(RegistrationInputModel registrationInputModel);
+        Task<bool> RegisterUser(RegistrationInputModel registrationInputModel);
 
         bool GetUser(UserInputModel userInputModel);
 

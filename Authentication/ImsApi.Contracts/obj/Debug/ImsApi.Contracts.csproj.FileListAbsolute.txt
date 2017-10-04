@@ -40,7 +40,6 @@ D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\Microsoft.AspNet.
 D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
 D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\EntityFramework.dll
 D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
-D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\AutoMapper.dll
 D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\Microsoft.Owin.Security.Cookies.dll
 D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\AuthBLL.pdb
 D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\ImsApi.Entities.pdb
@@ -52,8 +51,9 @@ D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\Microsoft.AspNet.
 D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\EntityFramework.xml
 D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
-D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\AutoMapper.xml
 D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\Microsoft.Owin.Security.Cookies.xml
 D:\POC\Athentication\Authentication\ImsApi.Contracts\obj\Debug\ImsApi.Contracts.csprojResolveAssemblyReference.cache
 D:\POC\Athentication\Authentication\ImsApi.Contracts\obj\Debug\ImsApi.Contracts.dll
 D:\POC\Athentication\Authentication\ImsApi.Contracts\obj\Debug\ImsApi.Contracts.pdb
+D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\AutoMapper.dll
+D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\AutoMapper.xml

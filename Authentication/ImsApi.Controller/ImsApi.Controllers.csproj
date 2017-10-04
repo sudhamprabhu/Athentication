@@ -358,6 +358,10 @@
       <Project>{eb976483-800c-40a9-bf93-71820763521e}</Project>
       <Name>ImsApi.Services</Name>
     </ProjectReference>
+    <ProjectReference Include="..\IMSBLL\IMSBLL.csproj">
+      <Project>{2e3d4b80-e892-44fd-81ab-b0f861e583bb}</Project>
+      <Name>IMSBLL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

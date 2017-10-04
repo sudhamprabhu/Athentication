@@ -69,6 +69,7 @@
       <EndProperty Name="User">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
+      <Condition ColumnName="RoleId" IsNull="false" />
     </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

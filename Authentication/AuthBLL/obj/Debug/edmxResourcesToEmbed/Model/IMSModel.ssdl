@@ -37,7 +37,7 @@
     <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
     <Property Name="AccessFailedCount" Type="int" Nullable="false" />
     <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
-    <Property Name="OrganizationId" Type="int" Nullable="false" />
+    <Property Name="OrganizationId" Type="int" />
   </EntityType>
   <EntityType Name="UserClaim">
     <Key>
