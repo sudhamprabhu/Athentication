@@ -1,18 +1,23 @@
 ﻿(function () {
     'use strict';
-    ImsAPP.factory('apiCall', ['$http', '$q', '$location', function ($http, $q, $location) {
+    ImsAPP.factory('apiCall', ['$http', '$q', '$location', 'authInterceptorService', function ($http, $q, $location, authInterceptorService) {
         var serviceBase = 'http://localhost:57789/';
         function processRequest(verb, uri, payload, config) {
             var differed = $q.defer();
             var headerOptions = {
                 "Accept": "text/json",
-                "Content-Type": "application/json; charset=utf-8"
+                "Content-Type": "application/json; charset=utf-8"                
             };
-
+            debugger;
             if (config.headers)
             {
                 headerOptions = config.headers;
             }
+            if (uri != "token") {
+                headerOptions = authInterceptorService.request(headerOptions);
+            }
+           
+            console.log(headerOptions);
             var xhr = $http({
                 method: verb,
                 url: serviceBase+uri,

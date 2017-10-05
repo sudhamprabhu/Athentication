@@ -1,6 +1,6 @@
 ﻿(function () {
     'use strict';
-    ImsAPP.controller('loginController', ['$rootScope', '$location', 'loginService', function ($rootScope, $location, loginService) {
+    ImsAPP.controller('loginController', ['$rootScope', '$location', 'loginService', 'logOutService', function ($rootScope, $location, loginService, logOutService) {
         var vm = this;
         
         var _authentication = { isAuth: false, userName: "" };
@@ -14,28 +14,21 @@
         });
 
         /*functions */
-        angular.extend(this, {
-            logOut: function () {               
-                loginService.removeTokenFromLocalStorage();
-                vm.authentication.isAuth = false;
-                vm.authentication.userName = "";
-                $location.path('/home');
-            },
+        angular.extend(this, {            
             login: function (loginData) {
                 debugger;
                 var data = "grant_type=password&username=" + loginData.userName + "&password=" + loginData.password;
                 loginService.getAuthtokens(data).then(function (authtokenDetails) {
-                    console.log(authtokenDetails);
-                    $rootScope.isAuth = true;
-                    vm.authentication.userName = loginData.userName;
+                    console.log(authtokenDetails.data);
+                    $rootScope.isAuth = true;                   
                     $rootScope.userName = loginData.userName;
                     loginService.setTokenInLocalstorage(authtokenDetails.data);
-                    $location.path('/signup');
-                }).catch(function (response) {
                     debugger;
-                    vm.message == 'login failed.';
-                    vm.logOut();
-                    
+                    $location.path('/dashboard');
+                }).catch(function (response) {
+                    logOutService.logOut();
+                    console.log(response);
+                   // vm.message = response.data.error_description;
                 });
             }
         });

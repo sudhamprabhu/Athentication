@@ -2,8 +2,10 @@
 using Autofac.Integration.WebApi;
 using System.Web.Http;
 using System.Reflection;
+using ImsApi.Services.Org;
 using ImsApi.Services;
 using ImsApi.Contracts.Auth;
+using ImsApi.Contracts.Org;
 
 namespace ImsApi.Controller.App_Start
 {
@@ -31,6 +33,7 @@ namespace ImsApi.Controller.App_Start
                  .As<IAuthService>()
                  .InstancePerRequest();
 
+            builder.RegisterType<OrgService>().As<IOrgService>().InstancePerRequest();
             //Set the dependency resolver to be Autofac.  
             Container = builder.Build();
 

@@ -10,12 +10,12 @@
         return authInterceptorServiceFactory;
 
          function _request(config) {
-
+             debugger;
             config.headers = config.headers || {};
 
             var authData = localStorageService.get('authorizationData');
             if (authData) {
-                config.headers.Authorization = 'Bearer ' + authData.token;
+                config.headers.Authorization = authData.token;
             }
 
             return config;

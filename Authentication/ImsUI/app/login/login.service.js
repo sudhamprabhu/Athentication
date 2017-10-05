@@ -17,7 +17,7 @@
 
         function _setTokenInLocalstorage(authtokenDetails)
         {
-            localStorageService.set('authorizationData', { token: authtokenDetails.token, userName: authtokenDetails.username });
+            localStorageService.set('authorizationData', { token: 'Bearer '+authtokenDetails.token, userName: authtokenDetails.username });
             
         }
 

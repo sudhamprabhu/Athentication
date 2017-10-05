@@ -9,11 +9,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="content/css/Ims.css" rel="stylesheet" />
     <link href="content/css/common/loading-bar.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="indexController as vm">
-        {{isAuth}}
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="indexController as vm">      
         <div class="container">
             <div class="navbar-header">
                 <button class="btn btn-success navbar-toggle" ng-click="navbarExpanded = !navbarExpanded">
@@ -22,12 +22,12 @@
                 <a class="navbar-brand" href="#/">Home</a>
             </div>
             <div class="collapse navbar-collapse" data-collapse="!navbarExpanded">
-                <ul class="nav navbar-nav navbar-right">                  
-                    <li data-ng-hide="!vm.authentication.isAuth"><a href="#">Welcome {{vm.authentication.userName}}</a></li>
-                    <li data-ng-hide="!vm.authentication.isAuth"><a href="#/orders">My Orders</a></li>
-                    <li data-ng-hide="!vm.authentication.isAuth"><a href="" ng-click="logOut()">Logout</a></li>
-                    <li data-ng-hide="vm.authentication.isAuth"> <a href="#/login">Login</a></li>
-                    <li data-ng-hide="vm.authentication.isAuth"> <a href="#/signup">Sign Up</a></li>
+                <ul class="nav navbar-nav navbar-right">                                   
+                    <li data-ng-hide="!isAuth"><a href="#">Welcome {{userName}}</a></li>
+                    <li data-ng-hide="!isAuth"><a href="#/orders">My Orders</a></li>
+                    <li data-ng-hide="!isAuth"><a href="" ng-click="vm.logOut()">Logout</a></li>
+                    <li data-ng-hide="isAuth"> <a href="#/login">Login</a></li>
+                    <li data-ng-hide="isAuth"> <a href="#/signup">Sign Up</a></li>
                 </ul>
             </div>
         </div>
@@ -69,14 +69,18 @@
     <script src="app/Common/apiCaller.js"></script>
     <script src="app/authentication/authInterceptor.service.js"></script>
     <!--<script src="app/authentication/auth.service.js"></script>-->
+    <script src="app/Dashboard/dashboard.service.js"></script>
     <script src="app/orders/orders.service.js"></script>
     <script src="app/signUp/registration.service.js"></script>
+    <script src="app/Common/logOut.service.js"></script>
     <script src="app/login/login.service.js"></script>
+    
     <!-- Load controllers -->
     <script src="app/index.controller.js"></script>
     <script src="app/home/home.controller.js"></script>
     <script src="app/login/login.controller.js"></script>
     <script src="app/signUp/signup.controller.js"></script>
+    <script src="app/Dashboard/dashboard.controller.js"></script>
    
    
     <!--<script src="app/orders/"></script>-->

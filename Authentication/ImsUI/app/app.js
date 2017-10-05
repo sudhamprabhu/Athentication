@@ -19,14 +19,15 @@ ImsAPP.config(function ($routeProvider, $httpProvider) {
         templateUrl: "/app/signUp/signup.html"
     });
 
-    //$routeProvider.when("/orders", {
-    //    controller: "ordersController",
-    //    templateUrl: "/app/orders.html"
-    //});
+    $routeProvider.when("/dashboard", {
+        controller: "dashboardController",
+        controllerAs: "vm",
+        templateUrl: "/app/Dashboard/orgDetails.html"
+    });
 
-    $routeProvider.otherwise({ redirectTo: "/home" });
+    $routeProvider.otherwise({ redirectTo: "/login" });
 
-    $httpProvider.interceptors.push('authInterceptorService');
+   // $httpProvider.interceptors.push('authInterceptorService');
 });
 
  //ImsAPP.run(['authService', function (authService) {

@@ -57,6 +57,7 @@ namespace ImsApi.Services
                     organizationDTO.Name = registrationInputModel.OrganizationInputModel.Name;
                     organizationDTO = await SaveOrgDetails(organizationDTO);
                     var result =  await UpdateUser(userDTO);
+                    success = true;
                 }
             }
             authRepository.Dispose();

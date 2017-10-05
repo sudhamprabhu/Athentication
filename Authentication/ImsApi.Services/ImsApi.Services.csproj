@@ -91,6 +91,7 @@
   <ItemGroup>
     <Compile Include="Auth\AuthService.cs" />
     <Compile Include="Base\ApiServiceBase.cs" />
+    <Compile Include="Org\OrgService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -57,3 +57,5 @@ D:\POC\Athentication\Authentication\ImsApi.Contracts\obj\Debug\ImsApi.Contracts.
 D:\POC\Athentication\Authentication\ImsApi.Contracts\obj\Debug\ImsApi.Contracts.pdb
 D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\AutoMapper.dll
 D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\AutoMapper.xml
+D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\IMSBLL.dll
+D:\POC\Athentication\Authentication\ImsApi.Contracts\bin\Debug\IMSBLL.pdb

@@ -29,6 +29,13 @@ namespace IMSBLL
             return  organizationDTO;
         }
 
+
+        public OrganizationDTO GetOrganizationOnId(int OrganizationId)
+        {
+            var organization = dbContext.Organizations.Find(OrganizationId);
+            return  Mapper.Map<Organization, OrganizationDTO>(organization);
+        }
+
         public void Dispose()
         {
            dbContext.Dispose();

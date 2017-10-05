@@ -1,11 +1,11 @@
 ﻿(function () {
     'use strict';
-    function indexController($rootScope, $location, loginService, registrationService) {
+    function indexController($rootScope, $location, logOutService) {
         var vm = this;
         debugger;
         $rootScope.userName="";
         $rootScope.isAuth = false;
-        
+       
        
         var _savedSuccessfully = true;
         var _message = '';
@@ -17,12 +17,14 @@
        
          /* functions*/
         angular.extend(this, {
-           
+            logOut: function () {
+                logOutService.logOut();
+            }
         });
 
     };
 
-    indexController.$inject = [ '$rootScope', '$location', 'loginService', 'registrationService'];
+    indexController.$inject = [ '$rootScope', '$location','logOutService'];
     angular.module('ImsAPP').controller('indexController', indexController);
 
 })();

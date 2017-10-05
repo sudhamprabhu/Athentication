@@ -98,6 +98,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\Common\apiCaller.js" />
+    <Content Include="app\Dashboard\dashboard.service.js" />
+    <Content Include="app\Dashboard\orgDetails.html" />
     <Content Include="app\home.html" />
     <Content Include="app\home\home.controller.js" />
     <Content Include="app\home\home.html" />
@@ -109,6 +111,9 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="app\Common\logOut.service.js" />
+    <Content Include="content\scss\style.scss" />
+    <Content Include="app\Dashboard\dashboard.controller.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

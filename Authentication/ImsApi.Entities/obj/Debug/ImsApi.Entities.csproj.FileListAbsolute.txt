@@ -7,3 +7,4 @@ D:\POC\Athentication\Authentication\ImsApi.Entities\bin\Debug\ImsApi.Entities.dl
 D:\POC\Athentication\Authentication\ImsApi.Entities\bin\Debug\ImsApi.Entities.pdb
 D:\POC\Athentication\Authentication\ImsApi.Entities\obj\Debug\ImsApi.Entities.dll
 D:\POC\Athentication\Authentication\ImsApi.Entities\obj\Debug\ImsApi.Entities.pdb
+D:\POC\Athentication\Authentication\ImsApi.Entities\obj\Debug\ImsApi.Entities.csprojResolveAssemblyReference.cache

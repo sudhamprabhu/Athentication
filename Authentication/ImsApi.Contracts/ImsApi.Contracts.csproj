@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auth\IAuthService.cs" />
+    <Compile Include="Org\IOrgService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -71,6 +72,10 @@
     <ProjectReference Include="..\ImsApi.Entities\ImsApi.Entities.csproj">
       <Project>{168a7ea4-dab0-442d-b47a-b82ba2a43460}</Project>
       <Name>ImsApi.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IMSBLL\IMSBLL.csproj">
+      <Project>{2e3d4b80-e892-44fd-81ab-b0f861e583bb}</Project>
+      <Name>IMSBLL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
