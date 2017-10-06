@@ -1,4 +1,4 @@
-﻿var ImsAPP =  angular.module('ImsAPP', ['ngRoute', 'LocalStorageModule','angular-loading-bar']);
+﻿var ImsAPP = angular.module('ImsAPP', ['ngRoute', 'LocalStorageModule', 'angular-loading-bar', 'ngCookies']);
 
 ImsAPP.config(function ($routeProvider, $httpProvider) {
     $routeProvider.when("/home",{

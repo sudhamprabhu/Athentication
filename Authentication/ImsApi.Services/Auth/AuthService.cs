@@ -26,6 +26,19 @@ namespace ImsApi.Services
             return success;
         }
 
+        public async Task<UserDTO> GetUser(string userName ,string password)
+        {
+           
+            var UserDTO = await authRepository.FindUser(userName, password);
+            return UserDTO;
+        }
+
+        public ImsApi.Entities.User.LoggedUser GetUser(int UserId)
+        {
+            ImsApi.Entities.User.LoggedUser loggedUser = new Entities.User.LoggedUser();
+            return loggedUser;
+        }
+
         public async Task<bool> RegisterUser(RegistrationInputModel registrationInputModel)
         {
             bool success = false;
@@ -73,6 +86,8 @@ namespace ImsApi.Services
         {
             return await iMSRepository.SaveOrganizationDetails(organizationDTO);
         }
+
+
 
     }
 }

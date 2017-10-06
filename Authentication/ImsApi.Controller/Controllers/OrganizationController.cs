@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using ImsApi.Entities.Org;
 using ImsApi.Contracts.Org;
+using ImsApi.Contracts.Auth;
 using System.Web.Http;
 
 namespace ImsApi.Controller.Controllers
@@ -13,7 +14,7 @@ namespace ImsApi.Controller.Controllers
     public class OrganizationController : ApiControllerBase
     {
         public IOrgService _IOrgService;
-        public OrganizationController(IOrgService IOrgService)
+        public OrganizationController(IOrgService IOrgService,IAuthService IAuthService):base(IAuthService)
         {
             _IOrgService = IOrgService;
         }

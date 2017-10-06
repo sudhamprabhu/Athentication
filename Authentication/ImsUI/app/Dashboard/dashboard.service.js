@@ -8,7 +8,7 @@
         /* private functions */
         function _getOrganization(OrgId) {
             debugger;
-            var url = 'api/Dashboard/GetOrgDetail/' + OrgId;
+            var url = 'api/Organization/GetOrgDetail/' + OrgId,
             config = {};
             return apiCall.get(url, config);
         }

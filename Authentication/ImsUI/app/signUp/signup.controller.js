@@ -28,24 +28,7 @@
                 }
             }
 
-            
-
         
-        //var _registration = {
-        //    userName: "",
-        //    password: "",
-        //    confirmPassword: "",
-        //    email: "",
-        //    code: "",
-        //    name: "",
-        //    address: "",
-        //    organizationType: 1,
-        //    phoneNo: "",
-        //    countryId: 1,
-        //    stateId: 1,
-
-
-        //}
        var _countries = [
              {
                  id: '1',
@@ -90,10 +73,9 @@
         /* functions*/
         angular.extend(this, {
             signUp: function (registration) {
-                debugger;
+             
                 registrationService.registerUser(registration).then(function (response) {
-                    debugger;
-                    console.log("registration : " + response);
+                   
                         vm.savedSuccessfully = true;
                         vm.message = "User has been registered successfully, you will be redicted to login page in 2 seconds.";
                         //$location.path('/login');

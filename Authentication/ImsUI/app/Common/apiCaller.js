@@ -8,16 +8,17 @@
                 "Accept": "text/json",
                 "Content-Type": "application/json; charset=utf-8"                
             };
-            debugger;
+           
             if (config.headers)
             {
                 headerOptions = config.headers;
             }
+            debugger;
             if (uri != "token") {
                 headerOptions = authInterceptorService.request(headerOptions);
             }
            
-            console.log(headerOptions);
+            console.log("apiCall :" + headerOptions);
             var xhr = $http({
                 method: verb,
                 url: serviceBase+uri,
@@ -34,12 +35,16 @@
 
         return {
             get: function (uri, config) {
-                return processRequest('get',uri,null, config);
+                debugger;
+                return processRequest('get', uri, null, config);
             },
             post: function (uri,data, config) {
                 return processRequest('post', uri, data, config);
             }           
         };
+
+       
+        
 
     }]);
 

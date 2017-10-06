@@ -1,8 +1,7 @@
 ﻿(function () {
     'use strict';
     function indexController($rootScope, $location, logOutService) {
-        var vm = this;
-        debugger;
+        var vm = this;       
         $rootScope.userName="";
         $rootScope.isAuth = false;
        

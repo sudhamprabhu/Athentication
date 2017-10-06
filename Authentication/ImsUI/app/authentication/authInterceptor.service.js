@@ -9,13 +9,12 @@
 
         return authInterceptorServiceFactory;
 
-         function _request(config) {
-             debugger;
-            config.headers = config.headers || {};
+         function _request(config) {         
+            config = config || {};
 
             var authData = localStorageService.get('authorizationData');
             if (authData) {
-                config.headers.Authorization = authData.token;
+                config.Authorization = authData.token;
             }
 
             return config;

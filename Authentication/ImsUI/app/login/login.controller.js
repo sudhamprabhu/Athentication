@@ -15,19 +15,19 @@
 
         /*functions */
         angular.extend(this, {            
-            login: function (loginData) {
-                debugger;
+            login: function (loginData) {              
                 var data = "grant_type=password&username=" + loginData.userName + "&password=" + loginData.password;
-                loginService.getAuthtokens(data).then(function (authtokenDetails) {
-                    console.log(authtokenDetails.data);
+                loginService.getAuthtokens(data).then(function (authtokenDetails) {                   
                     $rootScope.isAuth = true;                   
                     $rootScope.userName = loginData.userName;
+                    debugger;
                     loginService.setTokenInLocalstorage(authtokenDetails.data);
                     debugger;
+                    loginService.SetLoggedInUser(loginData.userName, loginData.password);
                     $location.path('/dashboard');
                 }).catch(function (response) {
                     logOutService.logOut();
-                    console.log(response);
+                    loginService.ClearLoggedInUser();
                    // vm.message = response.data.error_description;
                 });
             }

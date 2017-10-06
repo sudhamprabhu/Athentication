@@ -1,5 +1,6 @@
 ﻿using Owin;
 using ImsApi.Entities.Auth;
+using ImsApi.Entities.User;
 using AuthBLL.Entities;
 using System.Threading.Tasks;
 
@@ -11,5 +12,8 @@ namespace ImsApi.Contracts.Auth
 
         bool GetUser(UserInputModel userInputModel);
 
+        LoggedUser GetUser(int UserId);
+
+        Task<UserDTO> GetUser(string userName, string password);
     }
 }

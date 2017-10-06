@@ -5,6 +5,7 @@ using System.Web;
 using System;
 using System.Web.Http;
 using System.Threading.Tasks;
+using ImsApi.Contracts.Org;
 
 
 namespace ImsApi.Controller.Controllers
@@ -15,7 +16,7 @@ namespace ImsApi.Controller.Controllers
     {
         private IAuthService _IAuthService;
 
-        public RegistrationController(IAuthService IAuthService)
+        public RegistrationController(IAuthService IAuthService):base(IAuthService)
         {
             _IAuthService = IAuthService;
         }
